@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo en casa</title>
+
+    <meta name="robots" content="index, follow">
+    <!-- open graph-->
+    <meta property="og::title" content="Porfolo de un ingeniero de sofware">
+    <meta property="og::descripcion"
+        content="portafolio de fernando, aqui mostrare mis conocimientos en la carrera tecnica de computacion e informatica">
+    <meta property="og::image" content="/img/1a4197a7aec99ffbba9e991400b14f3f.jpg">
+    <meta property="og::image:alt" content="Una imagen de un bello paisaje">
+
+    <meta name="theme-color" content="#09f">
+    <link rel="icon" type="img/png" href="/img/una-taza-de-javascript.png">
+    <meta name="descripcion"
+        content="portafolio de fernando, aqui mostrare mis conocimientos en la carrera tecnica de computacion e informatica">
+
+    <!--la parte correcta donde van los style es en head-->
+    <style>
+        /*selector {
+            propiedad: valor;  <--- declaracion */
+
+        h1 {
+            color: rgb(146 42 40/ 80%);
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        body {
+            background: rgb(255 210 210/ 100%);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .link {
+            color: rgb(173, 27, 27);
+
+        }
+
+        /*la seudoclase*/
+        .link:hover {
+            color: rgb(61, 206, 242);
+            outline: 5px solid rgb(61, 206, 242);
+        }
+
+        .link:active {
+            color: rgb(61, 242, 79);
+            outline: 5px solid rgb(85, 242, 61);
+        }
+
+        li:first-child {
+            color: rgb(80, 47, 199);
+        }
+
+        li:last-child {
+            color: blueviolet;
+        }
+
+        #show {
+            background: rgb(51, 40, 64);
+            color: white;
+            border: 0;
+        }
+
+        main>p {
+            /*los selectores "p" principales de main */
+            color: blueviolet;
+        }
+
+        main p strong {
+            color: rgb(152, 31, 31);
+        }
+
+        div span {
+            color: rgb(11, 110, 181, 100%);
+        }
+
+        .container {
+            background: rgb(192, 154, 6);
+            width: 100px;
+            height: 100px;
+            margin-top: 5px;
+            /*aumenta la distancia del esterior*/
+            padding: 10px;
+            /*aumenta la distancia del interior*/
+            border: 10px solid rgb(77, 52, 3);
+            border-radius: 9px;
+            box-sizing: border-box;
+            /*evita el aumento del container y prioriza al width y height*/
+
+
+        }
+
+        .container:hover {
+            background-color: rgb(0, 255, 255);
+            border: 10px solid rgb(36, 173, 173);
+        }
+
+        .container:active {
+            background-color: rgb(255, 0, 234);
+            border: 10px solid rgb(71, 0, 52);
+        }
+
+        /*-------------------*/
+        .caja {
+            margin-top: 5px;
+            border: 5px solid #000;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            /*la position relative ara que cualquiera de nuestros 
+            hijos se relaciones a este relative*/
+            overflow: hidden;
+        }
+
+        /*--CUADRO 1---*/
+        #cuadro1 {
+            font-size: 35px;
+            overflow: hidden;
+            /*mantiene el contenido dentro del container*/
+        }
+
+        /*--CUADRO 2---*/
+
+        #cuadro2 {
+            margin-top: 0;
+            border: 0;
+            background: #09f;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /*la position absolute podra moverse a donde desee con 
+            los codigos[top-right-bottom-left]*/
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        /*--CUADRO 3---*/
+
+        #cuadro3 {
+            margin-top: 0;
+            border: 0;
+            background: rgb(245, 132, 132);
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            /*el fixed hace que se quede ahi y se fije a la pantalla*/
+            top: 0;
+            right: 0;
+            z-index: 2;
+            /*se utiliza para medir la profundidad (la pagina web cuenta con capas de profundidad, 
+            ahi le estas indicando en que capa se posicionara)*/
+
+        }
+
+        /*--CUADRO 4---*/
+        #cuadro4 {
+            margin-top: 0;
+            border: 0;
+            background: rgb(193, 73, 220);
+            width: 100px;
+            height: 100px;
+            position: sticky;
+            /*el sticky hace que se quede donde esta y al bajar, sea empujado por la pantalla*/
+            top: 0;
+            right: 0;
+        }
+
+        /*--CUADRO 5--*/
+        .caja1 {
+            margin-top: 5px;
+            border: 5px solid #000;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            /*la position relative ara que cualquiera de nuestros 
+            hijos se relaciones a este relative*/
+            overflow: hidden;
+            /*mantiene el contenido adentro de hidden*/
+            display: flex;
+            /*hace que mantenga en columna o fila , se aplican cambios*/
+            box-sizing: border-box;
+            flex-flow: row nowrap;
+            justify-content: center;
+            /*cuando lo quieres centrar*/
+            gap: 15px;
+            /*este da un espacio */
+        }
+
+        #cuadro5 {
+            border-radius: 0;
+            margin-top: 0;
+            border: 1px solid;
+            height: 50px;
+            width: 50px;
+            box-sizing: border-box;
+            display: block;
+            overflow: hidden;
+
+        }
+
+        #cuadro5:first-child {
+            background: rgb(237, 237, 21);
+
+        }
+
+        #cuadro5:nth-child(2) {
+            background: rgb(70, 70, 251);
+
+        }
+
+        #cuadro5:last-child {
+            background: rgb(237, 118, 21);
+
+        }
+
+        /*--cuadro 6--*/
+        .caja2 {
+            margin-top: 5px;
+            border: 5px solid #000;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            gap: 10px;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            /*este acomoda la columna*/
+            align-items: flex-start;
+            /*este acomoda la fila*/
+        }
+
+        #cuadro6 {
+            margin-top: 0;
+            border: 0;
+            background: rgb(73, 205, 220);
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!--aqui se realizan los comentarios-->
+        <h1>Portafolios de fernando</h1>
+        <nav>
+            <a class="link" href="#Conocimientos">Conocimientos</a>
+            <a class="link" href="#experiencia">Experiencia</a>
+            <!--blank, manda a otra pagina----noreferrer, evita hackeos-->
+            <a class="link" target="_blank" rel="noreferrer" href="https://www.facebook.com/osito.jacky.7">Mi sitio
+                Web</a>
+            <br><br>
+        </nav>
+    </header>
+
+    <!--dialog, nos ayuda a ocultar y mostral los datos que queramos-->
+    <dialog id="oculto">
+        <h1>Aprendiendo Html desde cero!</h1>
+        <p>Este codigo es totalmente nativo!</p>
+        <button id="hide">cerrar modal</button>
+    </dialog>
+
+    <button id="show">ver mas informacion</button>
+
+    <script>
+        window.show.addEventListener('click', () => {
+            window.oculto.showModal()
+        })
+        window.hide.addEventListener('click', () => {
+            window.oculto.close()
+        })
+    </script>
+    <br><br>
+
+
+    <main>
+        <p>me chupa <strong> un huevo </strong> todos los
+            <em>locos de mi comunidad </em>
+        </p>
+
+        <h2>Experiencias</h2>
+
+        <ul>
+            <li class="list-item">Visual Studio</li>
+            <li class="list-item">SQL server</li>
+            <li class="list-item">Mongo DB</li>
+        </ul>
+
+        <img src="/img/1a4197a7aec99ffbba9e991400b14f3f.jpg" alt="Una imagen de un bello paisaje" title="La Naturaleza"
+            width="250px" height="150px" id="photo-natural">
+
+        <h2>Poryectos realizados</h2>
+
+        <aside>
+            <header>
+                <h3 id="Conocimientos">Conocimientos</h3>
+            </header>
+            <ol type="1" reversed start="10">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li value="5">JS</li>
+                <li>PY</li>
+                <li>REAC</li>
+            </ol>
+        </aside>
+
+        <button>
+            Haz click aqui
+        </button>
+
+        <section>
+            <article>
+                <header>
+                    <h4>Un programador</h4>
+                    <!--loading, esta solo carga la imagen cuando es necesario-->
+                    <img loading="lazy" title="un cafecito con JavaScrip" src="/img/una-taza-de-javascript.png"
+                        width="300" height="200" alt="Una taza donde se simbolisa el signo JavaScrip">
+                </header>
+                <p>Un programador es un arquitecto digital,
+                    un maestro de los códigos y algoritmos que da vida
+                    a nuestras aplicaciones y sistemas informáticos.
+                </p>
+                <footer>
+                    <small>la musica de una persona del siglo 18</small>
+                </footer>
+            </article>
+
+            <article>
+                <header>
+                    <h4 id="experiencia">Clases con MiDulive</h4>
+
+                    <iframe width="360" height="215" src="https://www.youtube.com/embed/3nYLTiY5skU?si=WjpftF6LiTKL_Pbw"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </header>
+                <p>¡Sumérgete en el emocionante mundo de la creación web!
+                    Aprende <strong> HTML desde cero </strong>en este curso completo y
+                    totalmente gratuito. ¡Prepárate para construir sitios
+                    web asombrosos y dar rienda suelta a tu creatividad en línea!
+                    <em>No te lo pierdas.</em>
+                </p>
+                <footer>
+                    <small>Gana una buena experiencia con estas clases de 2 horas</small>
+                </footer>
+            </article>
+
+        </section>
+
+        <section>
+            <h2>Preguntas frecuentes</h2>
+            <details open>
+                <summary>Que estudios tienes?</summary>
+                <p>estudie en el isntituto cibertec, una carrera de computacion e einformatica , tiempo de 3 años</p>
+            </details>
+
+            <details>
+                <summary>Cuales son tus hobits?</summary>
+                <p>me gusta jugar dota y escuchar musica</p>
+            </details>
+            <details>
+                <summary>Cuales son tus lenguajes favoritos?</summary>
+                <p>me gusta JavaScrip y Python por lo uqe se interactua con el proyecto dandole movimientos</p>
+            </details>
+        </section>
+
+        <section>
+            <h2>Formurario de contacto</h2>
+            <form action="post" action="/">
+                <fieldset>
+                    <legend>Informacion personal</legend>
+                    <div>
+                        <label for="name">Nombre: </label>
+                        <input type="text" id="name" placeholder="Fernando Diaz Colunga" required>
+                    </div>
+                    <label for="email">Correo: </label>
+                    <input type="email" id="email" placeholder="luisfernandodiaz.c2001@gmail.com" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informacion Adicional</legend>
+                    <div>
+                        <label for="telefono">Telefono: </label>
+                        <input type="tel" id="telefono" placeholder="99999999" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Otros</legend>
+                    <div>
+                        <label for="why">por que quieres contactar?</label>
+                        <select name="why" id="why">
+                            <option value="1">Trabajo</option>
+                            <option value="2">Duda</option>
+                            <option value="3">Mas Informacion</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="terms">Aceptas los terminos?</label>
+                        <input type="checkbox" id="terms" name="terms" required>
+                    </div>
+                    <div>
+                        <datalist id="lenguajes">
+                            <option value="JavaScrip"></option>
+                            <option value="Python"></option>
+                            <option value="Reac"></option>
+                        </datalist>
+                        <label>
+                            Con que lenguaje quieres que te ayude?
+                            <input list="lenguajes" name="lenguajes">
+                        </label>
+                    </div>
+                </fieldset>
+
+
+                <button>Enviar contacto</button>
+            </form>
+        </section>
+
+        <br><br>
+        <div>
+            <span>Damos estilos CSS a los contenedores</span>
+            <div class="container" id="cuadro1" title="cuadro 1">CSS. estilo 1</div>
+            <section class="caja">
+                <div class="container" id="cuadro2" title="cuadro 2">CSS. estilo 2</div>
+            </section>
+            <section class="caja">
+                <div class="container" id="cuadro3" title="cuadro 3">CSS. estilo 3</div>
+            </section>
+            <section class="caja">
+                <div class="container" id="cuadro4" title="cuadro 4">CSS. estilo 4</div>
+            </section>
+            <section class="caja1">
+                <div class="container1" id="cuadro5" title="cuadro 5.1">CSS. estilo 5.1</div>
+                <div class="container1" id="cuadro5" title="cuadro 5.2">CSS. estilo 5.2</div>
+                <div class="container1" id="cuadro5" title="cuadro 5.3">CSS. estilo 5.3</div>
+            </section>
+            <section class="caja2">
+                <div class="container" id="cuadro6" title="cuadro 6">CSS. estilo 6</div>
+                <div class="container" id="cuadro6" title="cuadro 6">CSS. estilo 6</div>
+            </section>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br><br><br><br><br>
+        <video controls width="350" height="250" title="TINI, KHEA - Ella Dice"
+            src="/img/TINI, KHEA - Ella Dice (TINI TINI TINI Live).mp4"></video>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+
+        <input type="text" value="">
+        <input type="password" value="1">
+        <input type="radio" value="1">
+        <input type="checkbox" value="1">
+        <input type="button" value="1">
+        <input type="color" value="1">
+        <input type="email" value="1">
+        <input type="file" value="1">
+        <input type="hidden" value="1">
+        <input type="image" value="1">
+        <input type="number" value="1">
+        <input type="range" value="1">
+        <input type="reset" value="1">
+        <input type="submit" value="1">
+
+
+
+    </main>
+
+    <footer>
+        <a href="">envia un mensaje</a>
+    </footer>
+
+
+</body>
+
+</html>
